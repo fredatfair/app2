@@ -9,8 +9,6 @@ stages:
     npmExecuteLint: true
   Additional Unit Tests:
     npmExecuteScripts: false
-  Malware Scan:
-    malwareExecuteScan: true
   Acceptance:
     cloudFoundryDeploy: false
     cfApiEndpoint: "https://api.cf.us10-001.hana.ondemand.com"
@@ -18,10 +16,8 @@ stages:
     cfSpace: "dev"
     cfAppName: "app1"
     cfCredentialsId: "cf"
-    deployType: "standard"
-    npmExecuteEndToEndTests: false
-  Compliance:
-    sonarExecuteScan: false
+    uiVeri5ExecuteTests: false
+
   Release:
     cloudFoundryDeploy: true
     cfApiEndpoint: "https://api.cf.us10-001.hana.ondemand.com"
@@ -30,8 +26,7 @@ stages:
     cfAppName: "app1"
     cfCredentialsId: "cf"
     deployType: "standard"
-    tmsExport: false
-    tmsUpload: true
+    uiVeri5ExecuteTests: false
 steps:
   artifactPrepareVersion:
     versioningType: "cloud_noTag"
@@ -40,5 +35,5 @@ steps:
   cloudFoundryDeploy:
     mtaDeployParameters: "-f --version-rule ALL"
   tmsUpload:
-    nodeName: "test"
+    nodeName: "qa"
     credentialsId: "ctms"

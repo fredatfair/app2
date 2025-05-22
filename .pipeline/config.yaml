@@ -7,17 +7,17 @@ stages:
   Acceptance:
     cloudFoundryDeploy: false
     cfApiEndpoint: "https://api.cf.us10-001.hana.ondemand.com"
-    cfOrg: "c96f2572_dpedev"
+    cfOrg: "c96f2572trial_demo-uzmq2u5n"
     cfSpace: "dev"
-    cfAppName: "app1"
+    cfAppName: "app2"
     cfCredentialsId: "cf"
     uiVeri5ExecuteTests: false
   Release:
     cloudFoundryDeploy: true
     cfApiEndpoint: "https://api.cf.us10-001.hana.ondemand.com"
-    cfOrg: "c96f2572_dpedev"
+    cfOrg: "c96f2572trial_demo-uzmq2u5n"
     cfSpace: "dev"
-    cfAppName: "app1"
+    cfAppName: "app2"
     cfCredentialsId: "cf"
     tmsUpload: false
 

@@ -11,6 +11,7 @@ stages:
     cfSpace: "dev"
     cfAppName: "app1"
     cfCredentialsId: "cf"
+    uiVeri5ExecuteTests: false
   Release:
     cloudFoundryDeploy: true
     cfApiEndpoint: "https://api.cf.us10-001.hana.ondemand.com"
@@ -18,6 +19,7 @@ stages:
     cfSpace: "dev"
     cfAppName: "app1"
     cfCredentialsId: "cf"
+    tmsUpload: false
 
 steps:
   artifactPrepareVersion:

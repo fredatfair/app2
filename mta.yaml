@@ -53,23 +53,25 @@ modules:
     type: html5
     path: app/html5
     build-parameters:
-      build-result: dist
+      build-result: resources
       builder: custom
       commands:
         - npm install
         - npm run build:cf
-      supported-platforms: []
+      supported-platforms:
+        - cf
 
   - name: app1-fiori
     type: html5
     path: app/fiori
     build-parameters:
-      build-result: dist
+      build-result: resources
       builder: custom
       commands:
         - npm install
         - npm run build:cf
-      supported-platforms: []
+      supported-platforms:
+        - cf
 
   - name: app1-ui-deployer
     type: com.sap.application.content
@@ -81,13 +83,13 @@ modules:
     build-parameters:
       build-result: app
       requires:
-        - artifacts:
+        - name: app1-html5
+          artifacts:
             - html5-content.zip
-          name: app1-html5
           target-path: app
-        - artifacts:
+        - name: app1-fiori
+          artifacts:
             - fiori-content.zip
-          name: app1-fiori
           target-path: app
 
 resources:

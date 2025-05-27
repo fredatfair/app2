@@ -1,7 +1,7 @@
 {
   "name": "app1",
   "version": "0.0.1",
-  "repository": "<Add your repository here>",
+  "repository": "https://github.com/<your-org>/<your-repo>",
   "license": "UNLICENSED",
   "description": "Business Application 1",
   "engines": {
@@ -11,6 +11,7 @@
     "@cap-js/audit-logging": "latest",
     "@sap-cloud-sdk/http-client": "latest",
     "@sap/cds": "latest",
+    "@sap/hana-client": "latest",
     "@sap/xsenv": "latest",
     "@sap/xssec": "latest",
     "cf-nodejs-logging-support": "latest",
@@ -26,7 +27,8 @@
     "app/fiori"
   ],
   "scripts": {
-    "start": "cds-serve"
+    "start": "cds run",
+    "build": "cds build"
   },
   "eslintConfig": {
     "extends": "eslint:recommended",

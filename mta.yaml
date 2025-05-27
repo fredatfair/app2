@@ -18,7 +18,7 @@ modules:
   - name: app1-db-deployer
   # ------------------------------------------------------------
     type: hdb
-    path: gen/db
+    path: db
     build-parameters:
       ignore:
         - default-*.json
@@ -38,7 +38,7 @@ modules:
   - name: app1-srv
   # ------------------------------------------------------------
     type: nodejs
-    path: gen/srv
+    path: srv
     build-parameters:
       ignore:
         - default-*.json
@@ -96,16 +96,16 @@ modules:
         parameters:
           content-target: true
     build-parameters:
-      build-result: gen/app
+      build-result: app
       requires:
         - artifacts:
             - html5-content.zip
           name: app1-html5
-          target-path: gen/app
+          target-path: app
         - artifacts:
             - fiori-content.zip
           name: app1-fiori
-          target-path: gen/app
+          target-path: app
 
   # ----- HTML5 APP REPOSITORY DESTINATION CONTENT MODULE ------
   - name: app1-dest-content
